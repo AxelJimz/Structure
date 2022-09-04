@@ -1,0 +1,119 @@
+// * Mixin Text
+
+// $text: (
+//   width: null,
+//   max-width: null,
+//   margin: (
+//     xs: null,
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+//   font-family: null,
+//   font-size: null,
+//   font-weight: null,
+//   line-height: null,
+//   letter-spacing: null,
+//   word-spacing: null,
+//   text-transform: null,
+//   text-align: (
+//     xs: null,
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+//   color: null,
+//   background-color: null,
+// );
+
+@mixin text($class: "text", $map: null) {
+  .#{$class} {
+    width: map-get($map, width);
+    max-width: map-get($map, max-width);
+    margin: map-get(map-get($map, margin), xs);
+    font-family: map-get($map, font-family);
+    font-size: map-get($map, font-size);
+    font-weight: map-get($map, font-weight);
+    line-height: map-get($map, line-height);
+    letter-spacing: map-get($map, letter-spacing);
+    word-spacing: map-get($map, word-spacing);
+    text-transform: map-get($map, text-transform);
+    text-align: map-get(map-get($map, text-align), xs);
+    color: map-get($map, color);
+    background-color: map-get($map, background-color);
+  }
+  @if (margin: map-get(map-get($map, margin), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), sm);
+      }
+    }
+  }
+  @if (margin: map-get(map-get($map, margin), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), md);
+      }
+    }
+  }
+  @if (margin: map-get(map-get($map, margin), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), lg);
+      }
+    }
+  }
+  @if (margin: map-get(map-get($map, margin), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), xl);
+      }
+    }
+  }
+  @if (margin: map-get(map-get($map, margin), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), xxl);
+      }
+    }
+  }
+  @if (text-aling: map-get(map-get($map, text-align), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        text-align: map-get(map-get($map, text-align), sm);
+      }
+    }
+  }
+  @if (text-aling: map-get(map-get($map, text-align), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        text-align: map-get(map-get($map, text-align), md);
+      }
+    }
+  }
+  @if (text-aling: map-get(map-get($map, text-align), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        text-align: map-get(map-get($map, text-align), lg);
+      }
+    }
+  }
+  @if (text-aling: map-get(map-get($map, text-align), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        text-align: map-get(map-get($map, text-align), xl);
+      }
+    }
+  }
+  @if (text-aling: map-get(map-get($map, text-align), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        text-align: map-get(map-get($map, text-align), xxl);
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+// * Mixin Grid
+
+// $grid: (
+//   columns: (
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+//   gap: null,
+// );
+
+@mixin grid($class: "grid", $map: null) {
+  .#{$class} {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: map-get($map, gap);
+  }
+  @if (map-get(map-get($map, columns), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        grid-template-columns: repeat(map-get(map-get($map, columns), sm), 1fr);
+      }
+    }
+  }
+  @if (map-get(map-get($map, columns), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        grid-template-columns: repeat(map-get(map-get($map, columns), md), 1fr);
+      }
+    }
+  }
+  @if (map-get(map-get($map, columns), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        grid-template-columns: repeat(map-get(map-get($map, columns), lg), 1fr);
+      }
+    }
+  }
+  @if (map-get(map-get($map, columns), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        grid-template-columns: repeat(
+          map-get(map-get($map, columns), xxl),
+          1fr
+        );
+      }
+    }
+  }
+  @if (map-get(map-get($map, columns), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        grid-template-columns: repeat(
+          map-get(map-get($map, columns), xxl),
+          1fr
+        );
+      }
+    }
+  }
+}
+
+

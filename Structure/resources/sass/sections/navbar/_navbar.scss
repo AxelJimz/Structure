@@ -1,0 +1,82 @@
+// * Section Navbar
+
+$navbar: (
+  position: fixed,
+  top: 0,
+  left: 0,
+  background-color: null,
+  border-bottom : null,
+  box-shadow : null,
+
+  content: (
+    max-width: 992px,
+  ),
+  info: (
+    use: null,
+    display: (
+      xs: null,
+      lg: null,
+    ),
+  ),
+  brand: (
+    display: (
+      xs: null,
+      lg: null,
+    ),
+    on-links: (
+      use: null,
+      xs: null,
+      lg: null,
+    ),
+  ),
+  links: (
+    left: (
+      xs: -100%,
+      lg: null,
+    ),
+    align-items: (
+      xs: null,
+      lg: null,
+    ),
+    background-color: (
+      xs: null,
+      lg: transparent,
+    ),
+  ),
+  buttons: (
+    use: null,
+    display: (
+      xs: null,
+      lg: null,
+    ),
+    on-links: (
+      use: null,
+      xs: null,
+      lg: null,
+    ),
+  ),
+  networks: (
+    use: true,
+    display: (
+      xs: null,
+      lg: null,
+    ),
+    on-links: (
+      use: true,
+      xs: null,
+      lg: null,
+    ),
+  ),
+  menu: (
+    display: (
+      xs: inline-block,
+      lg: none,
+    ),
+  ),
+  trans: (
+    type: null,
+    duration: null,
+  ),
+);
+
+@include navbar(navbar, $navbar);

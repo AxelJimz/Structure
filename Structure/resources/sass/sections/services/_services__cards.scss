@@ -1,0 +1,14 @@
+// * Services Cards
+
+$services__cards: (
+  columns: (
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  gap: null,
+);
+
+@include grid(services__cards, $services__cards);

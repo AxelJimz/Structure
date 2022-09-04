@@ -1,0 +1,43 @@
+// * Section testimonials
+
+$testimonials: (
+  max-width: null,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(testimonials, $testimonials);
+@import "testimonials__span";
+@import "testimonials__title";
+@import "testimonials__subtitle";
+@import "testimonials__paragraph";
+@import "testimonials__buttons";
+@import "testimonials__image";
+@import "testimonials__cards";
+@import "testimonials__card";
+

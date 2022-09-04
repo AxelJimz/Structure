@@ -1,0 +1,33 @@
+// * Contact Span
+
+$contact__span: (
+  width: null,
+  max-width: null,
+  margin: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  font-family: null,
+  font-size: null,
+  font-weight: null,
+  line-height: null,
+  letter-spacing: null,
+  word-spacing: null,
+  text-transform: null,
+  text-align: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  color: null,
+  background-color: null,
+);
+
+@include text(contact__span, $contact__span);

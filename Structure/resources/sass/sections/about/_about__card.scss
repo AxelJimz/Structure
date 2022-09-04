@@ -1,0 +1,56 @@
+// * About Card
+
+$about__card: (
+  width: null,
+  max-width: null,
+  padding: null,
+  flex: (
+    use: true,
+    flex-direction: (
+      xs: null,
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null,
+      xxl: null,
+    ),
+    justify-content: (
+      xs: null,
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null,
+      xxl: null,
+    ),
+    align-items: (
+      xs: null,
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null,
+      xxl: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+  border: (
+    all: null,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null,
+    radius: null,
+  ),
+  shadow: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+);
+
+@include card(about__card, $about__card);

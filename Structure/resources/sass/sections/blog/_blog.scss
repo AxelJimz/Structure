@@ -1,0 +1,43 @@
+// * Section Blog
+
+$blog: (
+  max-width: null,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: ( 
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(blog, $blog);
+@import "blog__span";
+@import "blog__title";
+@import "blog__subtitle";
+@import "blog__paragraph";
+@import "blog__buttons";
+@import "blog__image";
+@import "blog__cards";
+@import "blog__card";
+

@@ -1,0 +1,12 @@
+{
+  "name": "structure",
+  "version": "1.1.0",
+  "description": "Framework to build the structure of landing pages qucikly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["framework", "Landing Page"],
+  "author": "Axel Jimz",
+  "license": "ISC"
+}

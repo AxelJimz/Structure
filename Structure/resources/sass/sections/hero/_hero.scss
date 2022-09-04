@@ -1,0 +1,43 @@
+// * Section Hero
+
+$hero: (
+  max-width: 123px,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(hero, $hero);
+@import "hero__span";
+@import "hero__title";
+@import "hero__subtitle";
+@import "hero__paragraph";
+@import "hero__buttons";
+@import "hero__image";
+@import "hero__cards";
+@import "hero__card";
+

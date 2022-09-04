@@ -1,0 +1,175 @@
+// * Mixin Button
+
+// $button: (
+//   padding: (
+//     xs: null,
+//     lg: null,
+//   ),
+//   margin: (
+//     xs: null,
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+//   color: null,
+//   background-color: null,
+//   border: (
+//     width: null,
+//     style: null,
+//     color: null,
+//     radius: null,
+//   ),
+//   hover: (
+//     color: null,
+//     background-color: null,
+//     border-color: null,
+//   ),
+//   trans: (
+//     type: null,
+//     duration: null,
+//   ),
+//   after: (
+//     use: null,
+//     top: null,
+//     left: null,
+//     background-color: null,
+//     hover: (
+//       top: null,
+//       left: null,
+//       background-color: null,
+//     ),
+//   ),
+// );
+
+@mixin button($class: "button", $map: null) {
+  .#{$class} {
+    position: relative;
+    padding: map-get(map-get($map, padding), xs);
+    margin: map-get(map-get($map, margin), xs);
+    color: map-get($map, color);
+    background-color: map-get($map, background-color);
+    border: map-get(map-get($map, border), width)
+      map-get(map-get($map, border), style)
+      map-get(map-get($map, border), color);
+    border-radius: map-get(map-get($map, border), radius);
+    -webkit-border-radius: map-get(map-get($map, border), radius);
+    -moz-border-radius: map-get(map-get($map, border), radius);
+    -ms-border-radius: map-get(map-get($map, border), radius);
+    -o-border-radius: map-get(map-get($map, border), radius);
+    transition: map-get(map-get($map, trans), duration)
+      map-get(map-get($map, trans), type);
+    -webkit-transition: map-get(map-get($map, trans), duration)
+      map-get(map-get($map, trans), type);
+    -moz-transition: map-get(map-get($map, trans), duration)
+      map-get(map-get($map, trans), type);
+    -ms-transition: map-get(map-get($map, trans), duration)
+      map-get(map-get($map, trans), type);
+    -o-transition: map-get(map-get($map, trans), duration)
+      map-get(map-get($map, trans), type);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .#{$class}:active {
+    color: map-get(map-get($map, hover), color);
+    background-color: map-get(map-get($map, hover), background-color);
+    border-color: map-get(map-get($map, hover), border-color);
+  }
+  @media (hover: hover) {
+    .#{$class}:hover {
+      color: map-get(map-get($map, hover), color);
+      background-color: map-get(map-get($map, hover), background-color);
+      border-color: map-get(map-get($map, hover), border-color);
+    }
+  }
+  @if (map-get(map-get($map, margin), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), sm);
+      }
+    }
+  }
+  @if (map-get(map-get($map, margin), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), md);
+      }
+    }
+  }
+  @if (map-get(map-get($map, padding), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        padding: map-get(map-get($map, padding), lg);
+      }
+    }
+  }
+  @if (map-get(map-get($map, margin), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), lg);
+      }
+    }
+  }
+  @if (map-get(map-get($map, margin), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), xl);
+      }
+    }
+  }
+  @if (map-get(map-get($map, margin), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        margin: map-get(map-get($map, margin), xxl);
+      }
+    }
+  }
+  @if (map-get(map-get($map, after), use)) {
+    .#{$class}::after {
+      content: "";
+      position: absolute;
+      top: map-get(map-get($map, after), top);
+      left: map-get(map-get($map, after), left);
+      width: 100%;
+      height: 100%;
+      background-color: map-get(map-get($map, after), background-color);
+      transition: map-get(map-get($map, trans), duration)
+        map-get(map-get($map, trans), type);
+      -webkit-transition: map-get(map-get($map, trans), duration)
+        map-get(map-get($map, trans), type);
+      -moz-transition: map-get(map-get($map, trans), duration)
+        map-get(map-get($map, trans), type);
+      -ms-transition: map-get(map-get($map, trans), duration)
+        map-get(map-get($map, trans), type);
+      -o-transition: map-get(map-get($map, trans), duration)
+        map-get(map-get($map, trans), type);
+    }
+    .#{$class}:active::after {
+      content: "";
+      top: map-get(map-get(map-get($map, after), hover), top);
+      left: map-get(map-get(map-get($map, after), hover), left);
+      background-color: map-get(
+        map-get(map-get($map, after), hover),
+        background-color
+      );
+    }
+    @media (hover: hover) {
+      .#{$class}:hover::after {
+        content: "";
+        top: map-get(map-get(map-get($map, after), hover), top);
+        left: map-get(map-get(map-get($map, after), hover), left);
+        background-color: map-get(
+          map-get(map-get($map, after), hover),
+          background-color
+        );
+      }
+    }
+    .#{$class} > span {
+      position: relative;
+      z-index: 500;
+    }
+  }
+}
+
+

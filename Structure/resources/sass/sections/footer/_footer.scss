@@ -1,0 +1,43 @@
+// * Section Footer
+
+$footer: (
+  max-width: 123px,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(footer, $footer);
+@import "footer__span";
+@import "footer__title";
+@import "footer__subtitle";
+@import "footer__paragraph";
+@import "footer__buttons";
+@import "footer__image";
+@import "footer__cards";
+@import "footer__card";
+

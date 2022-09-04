@@ -1,0 +1,43 @@
+// * Section About
+
+$about: (
+  max-width: null,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(about, $about);
+@import "about__span";
+@import "about__title";
+@import "about__subtitle";
+@import "about__paragraph";
+@import "about__buttons";
+@import "about__image";
+@import "about__cards";
+@import "about__card";
+

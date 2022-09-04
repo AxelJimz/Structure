@@ -1,0 +1,43 @@
+// * Section Contact
+
+$contact: (
+  max-width: null,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(contact, $contact);
+@import "contact__span";
+@import "contact__title";
+@import "contact__subtitle";
+@import "contact__paragraph";
+@import "contact__buttons";
+@import "contact__image";
+@import "contact__cards";
+@import "contact__card";
+

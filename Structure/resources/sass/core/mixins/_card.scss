@@ -1,0 +1,229 @@
+// * Mixin Card
+
+// $card: (
+//   width: null,
+//   max-width: null,
+//   padding: null,
+//   flex: (
+//     use: true,
+//     flex-direction: (
+//       xs: null,
+//       sm: null,
+//       md: null,
+//       lg: null,
+//       xl: null,
+//       xxl: null,
+//     ),
+//     justify-content: (
+//       xs: null,
+//       sm: null,
+//       md: null,
+//       lg: null,
+//       xl: null,
+//       xxl: null,
+//     ),
+//     align-items: (
+//       xs: null,
+//       sm: null,
+//       md: null,
+//       lg: null,
+//       xl: null,
+//       xxl: null,
+//     ),
+//   ),
+//   background: (
+//     color: null,
+//     image: null,
+//   ),
+//   border: (
+//     all: null,
+//     top: null,
+//     right: null,
+//     bottom: null,
+//     left: null,
+//     radius: null,
+//   ),
+//   shadow: (
+//     xs: null,
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+// );
+
+@mixin card($class: "card", $map: null) {
+  .#{$class} {
+    position: relative;
+    width: map-get($map, width);
+    max-width: map-get($map, max-width);
+    padding: map-get($map, padding);
+    margin: 0 auto;
+    @if (map-get(map-get($map, flex), use)) {
+      display: flex;
+      flex-direction: map-get(map-get(map-get($map, flex), flex-direction), xs);
+      justify-content: map-get(map-get(map-get($map, flex), justify-content), xs);
+      align-items: map-get(map-get(map-get($map, flex), align-items), xs);
+    }
+    background-color: map-get(map-get($map, background), color);
+    @if(map-get(map-get($map, background), image)) {
+      background-image: map-get(map-get($map, background), image);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    border: map-get(map-get($map, border), all);
+    border-top: map-get(map-get($map, border), top);
+    border-right: map-get(map-get($map, border), right);
+    border-bottom: map-get(map-get($map, border), bottom);
+    border-left: map-get(map-get($map, border), left);
+    border-radius: map-get(map-get($map, border), radius);
+  -webkit-border-radius: map-get(map-get($map, border), radius);
+  -moz-border-radius: map-get(map-get($map, border), radius);
+  -ms-border-radius: map-get(map-get($map, border), radius);
+  -o-border-radius: map-get(map-get($map, border), radius);
+  box-shadow: map-get(map-get($map, shadow), xs);
+  }
+  @if (map-get(map-get(map-get($map, flex), flex-direction), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        flex-direction: map-get(map-get(map-get($map, flex), flex-direction), sm);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), flex-direction), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        flex-direction: map-get(map-get(map-get($map, flex), flex-direction), md);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), flex-direction), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        flex-direction: map-get(map-get(map-get($map, flex), flex-direction), lg);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), flex-direction), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        flex-direction: map-get(map-get(map-get($map, flex), flex-direction), xl);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), flex-direction), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        flex-direction: map-get(map-get(map-get($map, flex), flex-direction), xxl);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), justify-content), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        justify-content: map-get(map-get(map-get($map, flex), justify-content), sm);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), justify-content), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        justify-content: map-get(map-get(map-get($map, flex), justify-content), md);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), justify-content), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        justify-content: map-get(map-get(map-get($map, flex), justify-content), lg);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), justify-content), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        justify-content: map-get(map-get(map-get($map, flex), justify-content), xl);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), justify-content), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        justify-content: map-get(map-get(map-get($map, flex), justify-content), xxl);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), align-items), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        align-items: map-get(map-get(map-get($map, flex), align-items), sm);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), align-items), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        align-items: map-get(map-get(map-get($map, flex), align-items), md);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), align-items), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        align-items: map-get(map-get(map-get($map, flex), align-items), lg);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), align-items), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        align-items: map-get(map-get(map-get($map, flex), align-items), xl);
+      }
+    }
+  }
+  @if (map-get(map-get(map-get($map, flex), align-items), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        align-items: map-get(map-get(map-get($map, flex), align-items), xxl);
+      }
+    }
+  }
+  @if (map-get(map-get($map, shadow), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      .#{$class} {
+        box-shadow: map-get(map-get($map, shadow), sm);
+      }
+    }
+  }
+  @if (map-get(map-get($map, shadow), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      .#{$class} {
+        box-shadow: map-get(map-get($map, shadow), md);
+      }
+    }
+  }
+  @if (map-get(map-get($map, shadow), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class} {
+        box-shadow: map-get(map-get($map, shadow), lg);
+      }
+    }
+  }
+  @if (map-get(map-get($map, shadow), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+      .#{$class} {
+        box-shadow: map-get(map-get($map, shadow), xl);
+      }
+    }
+  }
+  @if (map-get(map-get($map, shadow), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+      .#{$class} {
+        box-shadow: map-get(map-get($map, shadow), xxl);
+      }
+    }
+  }
+}
+

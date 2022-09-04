@@ -1,0 +1,238 @@
+// * Mixin Navbar
+
+// $navbar: (
+//   position: fixed,
+//   top: 0,
+//   left: 0,
+//   background-color: null,
+//   border-bottom : null,
+//   box-shadow : null,
+
+//   content: (
+//     max-width: 992px,
+//   ),
+//   info: (
+//     use: null,
+//     display: (
+//       xs: null,
+//       lg: null,
+//     ),
+//   ),
+//   brand: (
+//     display: (
+//       xs: null,
+//       lg: null,
+//     ),
+//     on-links: (
+//       use: null,
+//       xs: null,
+//       lg: null,
+//     ),
+//   ),
+//   links: (
+//     left: (
+//       xs: -100%,
+//       lg: null,
+//     ),
+//     align-items: (
+//       xs: null,
+//       lg: null,
+//     ),
+//     background-color: (
+//       xs: null,
+//       lg: transparent,
+//     ),
+//   ),
+//   buttons: (
+//     use: null,
+//     display: (
+//       xs: null,
+//       lg: null,
+//     ),
+//     on-links: (
+//       use: null,
+//       xs: null,
+//       lg: null,
+//     ),
+//   ),
+//   networks: (
+//     use: true,
+//     display: (
+//       xs: null,
+//       lg: null,
+//     ),
+//     on-links: (
+//       use: true,
+//       xs: null,
+//       lg: null,
+//     ),
+//   ),
+//   menu: (
+//     display: (
+//       xs: inline-block,
+//       lg: none,
+//     ),
+//   ),
+//   trans: (
+//     type: null,
+//     duration: null,
+//   ),
+// );
+
+@mixin navbar($class: "navbar", $map: null) {
+  .#{$class} {
+    position: map-get($map, position);
+    top: map-get($map, top);
+    left: map-get($map, left);
+    width: 100%;
+    padding: 0 6%;
+    background-color: map-get($map, background-color);
+    border-bottom: map-get($map, border-bottom);
+    box-shadow: map-get($map, box-shadow);
+    z-index: 1000;
+  }
+
+  .#{$class} * {
+    transition:  map-get(map-get($map, trans), duration) map-get(map-get($map, trans), type);
+    -webkit-transition:  map-get(map-get($map, trans), duration) map-get(map-get($map, trans), type);
+    -moz-transition:  map-get(map-get($map, trans), duration) map-get(map-get($map, trans), type);
+    -ms-transition:  map-get(map-get($map, trans), duration) map-get(map-get($map, trans), type);
+    -o-transition:  map-get(map-get($map, trans), duration) map-get(map-get($map, trans), type);
+  } 
+
+  .#{$class}__content {
+    max-width: map-get(map-get($map, content), max-width);
+    padding: 0.5rem 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @if (map-get(map-get($map, info), use)) {
+    .#{$class}__info {
+      display: map-get(map-get(map-get($map, info), display), xs);
+    }
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__info {
+        display: map-get(map-get(map-get($map, info), display), lg);
+      }
+    }
+  }
+
+  .#{$class}__brand {
+    display: map-get(map-get(map-get($map, brand), display), xs);
+  }
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    .#{$class}__brand {
+      display: map-get(map-get(map-get($map, brand), display), lg);
+    }
+  }
+
+  @if (map-get(map-get(map-get($map, brand), on-links), xs)) {
+    .#{$class}__links > ul > .#{$class}__brand {
+      display: map-get(map-get(map-get($map, brand), on-links), xs);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__links > ul > .#{$class}__brand {
+        display: map-get(map-get(map-get($map, brand), on-links), lg);
+      }
+    }
+  }
+
+  .#{$class}__links {
+    position: absolute;
+    top: 0;
+    left: map-get(map-get(map-get($map, links), left), xs);
+    width: 100%;
+    padding: 0 6%;
+    background-color: map-get(map-get(map-get($map, links), background-color), xs);
+  }
+
+  .#{$class}__links--visible {
+    left: 0;
+  }
+
+  .#{$class}__links > ul {
+    max-width: map-get(map-get($map, content), max-width);
+    padding: 0.5rem 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: map-get(map-get(map-get($map, links), align-items), xs);
+  }
+
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    .#{$class}__links {
+      position: relative;
+      top:  0 !important;
+      left: 0;
+      width: auto;
+      padding: 0;
+      background-color: map-get(map-get(map-get($map, links), background-color), lg);
+    }
+
+    .#{$class}__links > ul {
+      max-width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  @if (map-get(map-get($map, networks), use)) {
+    .#{$class}__networks {
+      display: map-get(map-get(map-get($map, networks), display), xs);
+    }
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__networks {
+        display: map-get(map-get(map-get($map, networks), display), lg);
+      }
+    }
+  }
+
+  @if (map-get(map-get($map, networks), on-links)) {
+    .#{$class}__links > ul > .#{$class}__networks {
+      display: map-get(map-get(map-get($map, networks), on-links), xs);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__links > ul > .#{$class}__networks {
+        display: map-get(map-get(map-get($map, networks), on-links), lg);
+      }
+    }
+  }
+
+  @if (map-get(map-get($map, buttons), use)) {
+    .#{$class}__buttons {
+      display: map-get(map-get(map-get($map, buttons), display), xs);
+    }
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__buttons {
+        display: map-get(map-get(map-get($map, buttons), display), lg);
+      }
+    }
+  }
+
+  @if (map-get(map-get($map, buttons), on-links)) {
+    .#{$class}__links > ul > .#{$class}__buttons {
+      display: map-get(map-get(map-get($map, buttons), on-links), xs);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      .#{$class}__links > ul > .#{$class}__buttons {
+        display: map-get(map-get(map-get($map, buttons), on-links), lg);
+      }
+    }
+  }
+
+  .#{$class}__menu {
+    display: map-get(map-get(map-get($map, menu), display), xs);
+  }
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    .#{$class}__menu {
+      display: map-get(map-get(map-get($map, menu), display), lg);
+    }
+  }
+}
+

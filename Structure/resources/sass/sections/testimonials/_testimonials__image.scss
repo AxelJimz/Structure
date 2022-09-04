@@ -1,0 +1,30 @@
+// * testimonials Image
+
+$testimonials__image: (
+  flex-direction: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  justify-content: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  align-items: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+);
+
+@include flex(testimonials__image, $testimonials__image);

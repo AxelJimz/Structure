@@ -1,0 +1,43 @@
+// * Section Portfolio
+
+$portfolio: (
+  max-width: 123px,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(portfolio, $portfolio);
+@import "portfolio__span";
+@import "portfolio__title";
+@import "portfolio__subtitle";
+@import "portfolio__paragraph";
+@import "portfolio__buttons";
+@import "portfolio__image";
+@import "portfolio__cards";
+@import "portfolio__card";
+

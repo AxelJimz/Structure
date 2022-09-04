@@ -1,0 +1,14 @@
+// * Blog Cards
+
+$blog__cards: (
+  columns: (
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  gap: null,
+);
+
+@include grid(blog__cards, $blog__cards);

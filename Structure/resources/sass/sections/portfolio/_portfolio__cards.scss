@@ -1,0 +1,14 @@
+// * Portfolio Cards
+
+$portfolio__cards: (
+  columns: (
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  gap: null,
+);
+
+@include grid(portfolio__cards, $portfolio__cards);

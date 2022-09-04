@@ -1,0 +1,132 @@
+// * Mixin Section
+
+// $section: (
+//   max-width: null,
+//   height: (
+//     xs: null,
+//     sm: null,
+//     md: null,
+//     lg: null,
+//     xl: null,
+//     xxl: null,
+//   ),
+//   padding: null,
+//   display: (
+//     grid: (
+//       use: true,
+//       columns: (
+//         xs: 1,
+//         sm: null,
+//         md: null,
+//         lg: null,
+//         xl: null,
+//         xxl: null,
+//       ),
+//       gap: null,
+//     ),
+//   ),
+//   background: (
+//     color: null,
+//     image: null,
+//   ),
+// );
+
+@mixin section($class: "section", $map: null) {
+  .#{$class} {
+    position: relative;
+    height: map-get(map-get($map, height), xs);
+    padding: 0 6%;
+    background-color: map-get(map-get($map, background), color);
+    @if (map-get(map-get($map, background), image)) {
+      background-image: map-get(map-get($map, background), image);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    z-index: 500;
+  }
+  .#{$class}__content {
+    max-width: map-get($map, max-width);
+    height: 100%;
+    padding: map-get($map, padding);
+    margin: 0 auto;
+    @if (map-get(map-get(map-get($map, display), grid), use)) {
+        display: grid;
+        grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), xs), 1fr);
+        gap: map-get(map-get(map-get($map, display), grid), gap);
+    }
+  }
+  @if (map-get(map-get($map, height), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+        .#{$class} {
+            height: map-get(map-get($map, height), sm);
+        }
+      }
+  }
+  @if (map-get(map-get($map, height), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+        .#{$class} {
+            height: map-get(map-get($map, height), md);
+        }
+      }
+  }
+  @if (map-get(map-get($map, height), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+        .#{$class} {
+            height: map-get(map-get($map, height), lg);
+        }
+      }
+  }
+  @if (map-get(map-get($map, height), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+        .#{$class} {
+            height: map-get(map-get($map, height), xl);
+        }
+      }
+  }
+  @if (map-get(map-get($map, height), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+        .#{$class} {
+            height: map-get(map-get($map, height), xxl);
+        }
+      }
+  }
+  @if (map-get(map-get(map-get(map-get($map, display), grid), columns), sm)) {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+        .#{$class}__content {
+            grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), sm), 1fr);
+        }
+      }
+  }
+  @if (map-get(map-get(map-get(map-get($map, display), grid), columns), md)) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+        .#{$class}__content {
+            grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), md), 1fr);
+        }
+      }
+  }
+  @if (map-get(map-get(map-get(map-get($map, display), grid), columns), lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+        .#{$class}__content {
+            grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), lg), 1fr);
+        }
+      }
+  }
+  @if (map-get(map-get(map-get(map-get($map, display), grid), columns), xl)) {
+    @media screen and (min-width: map-get($breakpoints, xl)) {
+        .#{$class}__content {
+            grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), xl), 1fr);
+        }
+      }
+  }
+  @if (map-get(map-get(map-get(map-get($map, display), grid), columns), xxl)) {
+    @media screen and (min-width: map-get($breakpoints, xxl)) {
+        .#{$class}__content {
+            grid-template-columns: repeat(map-get(map-get(map-get(map-get($map, display), grid), columns), xxl), 1fr);
+        }
+      }
+  }
+}
+
+
+

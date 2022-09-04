@@ -1,0 +1,46 @@
+// * About Buttons
+
+$about__button: (
+  padding: (
+    xs: null,
+    lg: null,
+  ),
+  margin: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  color: null,
+  background-color: null,
+  border: (
+    width: null,
+    style: null,
+    color: null,
+    radius: null,
+  ),
+  hover: (
+    color: null,
+    background-color: null,
+    border-color: null,
+  ),
+  trans: (
+    type: null,
+    duration: null,
+  ),
+  after: (
+    use: null,
+    top: null,
+    left: null,
+    background-color: null,
+    hover: (
+      top: null,
+      left: null,
+      background-color: null,
+    ),
+  ),
+);
+
+@include button(about__button, $about__button);

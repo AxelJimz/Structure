@@ -1,0 +1,14 @@
+// * About Cards
+
+$about__cards: (
+  columns: (
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  gap: null,
+);
+
+@include grid(about__cards, $about__cards);

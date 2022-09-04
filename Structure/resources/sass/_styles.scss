@@ -1,0 +1,30 @@
+// Variables
+@import "core/variables/normalize/normalize";
+@import "core/variables/palette/palette";
+@import "core/variables/breakpoints/breakpoints";
+// Mixins
+@import "core/mixins/navbar";
+@import "core/mixins/section";
+@import "core/mixins/grid";
+@import "core/mixins/flex";
+@import "core/mixins/text";
+@import "core/mixins/card";
+@import "core/mixins/button";
+// Sections
+@import "sections/navbar/navbar";
+@import "sections/hero/hero";
+@import "sections/about/about";
+@import "sections/services/services";
+@import "sections/portfolio/portfolio";
+@import "sections/testimonials/testimonials";
+@import "sections/blog/blog";
+@import "sections/contact/contact";
+@import "sections/footer/footer";
+
+
+
+
+
+
+
+

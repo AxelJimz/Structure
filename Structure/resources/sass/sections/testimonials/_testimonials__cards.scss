@@ -1,0 +1,14 @@
+// * testimonials Cards
+
+$testimonials__cards: (
+  columns: (
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  gap: null,
+);
+
+@include grid(testimonials__cards, $testimonials__cards);

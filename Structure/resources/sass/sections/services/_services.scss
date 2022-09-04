@@ -1,0 +1,43 @@
+// * Section Services
+
+$services: (
+  max-width: 123px,
+  height: (
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  ),
+  padding: null,
+  display: (
+    grid: (
+      use: true,
+      columns: (
+        xs: 1,
+        sm: null,
+        md: null,
+        lg: null,
+        xl: null,
+        xxl: null,
+      ),
+      gap: null,
+    ),
+  ),
+  background: (
+    color: null,
+    image: null,
+  ),
+);
+
+@include section(services, $services);
+@import "services__span";
+@import "services__title";
+@import "services__subtitle";
+@import "services__paragraph";
+@import "services__buttons";
+@import "services__image";
+@import "services__cards";
+@import "services__card";
+
